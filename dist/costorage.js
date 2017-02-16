@@ -28,21 +28,21 @@
      */
     Costorage.prototype.checkEnabled = function () {
 
-        var cookieEnabled;
+        var cookiesEnabled;
 
         try {
             if (document.cookie.indexOf("costoragetest=") != -1) {
-                cookieEnabled = true;
+                cookiesEnabled = true;
             } else {
                 document.cookie = "costoragetest=1";
-                cookieEnabled = document.cookie.indexOf("costoragetest=") != -1;
+                cookiesEnabled = document.cookie.indexOf("costoragetest=") != -1;
                 document.cookie = "costoragetest=1; expires=Thu, 01-Jan-1970 00:00:01 GMT";
             }
         } catch (ex) {
             return false;
         }
 
-        return cookieEnabled;
+        return cookiesEnabled;
     };
 
     /**
