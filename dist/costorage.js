@@ -1,31 +1,57 @@
 /*!
- * Cookie Storage Library v1.0.0
- * https://github.com/Nogard7491/cookie-storage
+ * Costorage library v1.0.0
+ * https://github.com/Nogard7491/costorage
  */
-(function (global, factory) {
+(function (factory) {
     "use strict";
 
-    if (typeof module === "object" && typeof module.exports === "object") {
-        module.exports = global.document ?
-            factory(global, true) :
-            function (w) {
-                if (!w.document) {
-                    throw new Error("Для работы с библиотекой Cookie Storage требуется наличие " +
-                        "объектов window и document.");
-                }
-                return factory(w);
-            };
+    if (typeof exports === "object") {
+        module.exports = factory();
+    } else if (typeof define === 'function' && define.amd) {
+        define(['costorage'], factory);
     } else {
-        factory(global, false);
+        window.costorage = new factory();
     }
-})(typeof window !== "undefined" ? window : this, function (window, noGlobal) {
+})(function () {
 
     /**
      * Создаёт объект.
      *
      * @constructor
      */
-    var CookieStorage = function () {};
+    var Costorage = function () {
+
+    };
+
+    /**
+     * Проверяет включены ли cookies.
+     */
+    Costorage.prototype.checkEnabled = function () {
+
+        var cookieEnabled;
+
+        try {
+            if (document.cookie.indexOf("costoragetest=") != -1) {
+                cookieEnabled = true;
+            } else {
+                document.cookie = "costoragetest=1";
+                cookieEnabled = document.cookie.indexOf("costoragetest=") != -1;
+                document.cookie = "costoragetest=1; expires=Thu, 01-Jan-1970 00:00:01 GMT";
+            }
+        } catch (ex) {
+            return false;
+        }
+
+        return cookieEnabled;
+    };
+
+    /**
+     * Проверяет существует ли cookie.
+     */
+    Costorage.prototype.exists = function (name) {
+
+        return (typeof this.get(name) === "undefined") ? false : true;
+    };
 
     /**
      * Получает cookie.
@@ -33,7 +59,7 @@
      * @param name название cookie
      * @return {*}
      */
-    CookieStorage.prototype.get = function (name) {
+    Costorage.prototype.get = function (name) {
 
         var matches = document.cookie.match(new RegExp(
             "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, "\\$1") + "=([^;]*)"
@@ -49,7 +75,7 @@
      * @param value значение cookie
      * @param options параметры cookie (expires, path, domain, secure)
      */
-    CookieStorage.prototype.set = function (name, value, options) {
+    Costorage.prototype.set = function (name, value, options) {
 
         options = options || {};
 
@@ -84,15 +110,12 @@
      *
      * @param name название cookie
      */
-    CookieStorage.prototype.delete = function (name) {
+    Costorage.prototype.delete = function (name) {
+
         this.set(name, "", {
             expires: -1
         });
     };
 
-    if (!noGlobal) {
-        window.cstorage = new CookieStorage();
-    }
-
-    return CookieStorage;
+    return new Costorage();
 });

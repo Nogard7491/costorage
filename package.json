@@ -1,12 +1,12 @@
 {
-  "name": "cstorage",
-  "version": "1.0.0",
+  "name": "costorage",
+  "version": "1.0.1",
   "keywords": [
     "cookie",
     "storage"
   ],
   "description": "Библиотека для удобной работы с Cookie.",
-  "main": "dist/cookie-storage.js",
+  "main": "dist/costorage.js",
   "homepage": "http://nogard.ru",
   "author": "Nogard7491",
   "repository": {
