@@ -1,5 +1,5 @@
 /*!
- * Costorage library v1.0.4
+ * Costorage library v1.0.5
  * https://github.com/Nogard7491/costorage
  */
 (function (factory) {
@@ -25,6 +25,8 @@
 
     /**
      * Проверяет включены ли cookies.
+     *
+     * @return {boolean} флаг, показывающий включены ли cookies
      */
     Costorage.prototype.checkEnabled = function () {
 
@@ -47,6 +49,8 @@
 
     /**
      * Проверяет существует ли cookie.
+     *
+     * @return {boolean} флаг сущестования cookie
      */
     Costorage.prototype.exists = function (name) {
 
@@ -57,7 +61,7 @@
      * Получает cookie.
      *
      * @param name название cookie
-     * @return {*}
+     * @return {mixed} значение cookie
      */
     Costorage.prototype.get = function (name) {
 
