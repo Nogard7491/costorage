@@ -1,5 +1,5 @@
 /*!
- * Costorage library v1.0.3
+ * Costorage library v1.0.4
  * https://github.com/Nogard7491/costorage
  */
 (function (factory) {

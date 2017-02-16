@@ -32,8 +32,7 @@
 
 ```javascript
     // проверка включены ли cookies
-    var checkEnabled = costorage.checkEnabled();
-    console.log(checkEnabled);
+    costorage.checkEnabled();
 ```
 
 ```javascript
