@@ -1,0 +1,23 @@
+{
+  "name": "cookie-storage",
+  "version": "0.0.1",
+  "keywords": [
+    "cookie",
+    "storage"
+  ],
+  "description": "Безопасное открытие нового окна при клике на ссылку.",
+  "main": "dist/cookie-storage.js",
+  "homepage": "http://nogard.ru",
+  "author": "Nogard7491",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Nogard7491/cookie-storage"
+  },
+  "bugs": {
+    "url": "https://github.com/Nogard7491/cookie-storage/issues"
+  },
+  "scripts": {
+    "build": "npm install"
+  },
+  "license": "MIT"
+}
