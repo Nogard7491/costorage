@@ -5,7 +5,7 @@
     "cookie",
     "storage"
   ],
-  "description": "Библиотека для удобной работы с Cookie.",
+  "description": "Библиотека для удобной работы с cookies.",
   "main": "dist/costorage.js",
   "homepage": "http://nogard.ru",
   "author": "Nogard7491",
