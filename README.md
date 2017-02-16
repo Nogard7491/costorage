@@ -22,7 +22,7 @@
     // подключение с помощью RequireJS
     requirejs(
         ["costorage"],
-        function(costorage){
+        function(costorage) {
             // ...
         }
     );
