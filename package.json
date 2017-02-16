@@ -1,11 +1,11 @@
 {
-  "name": "cookie-storage",
-  "version": "0.0.1",
+  "name": "cstorage",
+  "version": "1.0.0",
   "keywords": [
     "cookie",
     "storage"
   ],
-  "description": "Безопасное открытие нового окна при клике на ссылку.",
+  "description": "Библиотека для удобной работы с Cookie.",
   "main": "dist/cookie-storage.js",
   "homepage": "http://nogard.ru",
   "author": "Nogard7491",
