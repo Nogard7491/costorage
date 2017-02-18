@@ -37,7 +37,10 @@
 
 ```javascript
     // проверка на существование cookie
-    costorage.exists("cookie_name");
+    costorage.has("cookie_name");
+
+    // устаревший метод
+    // costorage.exists("cookie_name");
 ```
 
 ```javascript
